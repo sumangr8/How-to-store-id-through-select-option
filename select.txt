@@ -1,0 +1,11 @@
+<select name="product_cat">
+ <option value="<?php echo $cat_id; ?>"><?php echo $cat_title; ?></option>
+ <?php
+  $qry=mysqli_query($db,"select * from categories");
+  while($row_cat=mysqli_fetch_array($qry))
+  {
+   extract($row_cat);
+   echo "<option value='$cat_id'>$cat_title</option>";
+  }
+  ?>
+ </select>
